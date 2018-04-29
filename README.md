@@ -1,5 +1,6 @@
 # AndroCrypt(Beta)
   An Android App to Create Encrypted File vault and store data securely.
+  
   This App is in Beta Stage. Feel Free to Try it out :-)
 
 ## Algorithms Used
@@ -7,7 +8,7 @@
 2. Twofish 
 3. Serpent
 
-KeySize is 256
+ Note : KeySize is 256bit
 
 ## Open Source Libs/Projects Used:
 1. SpongyCastle : https://rtyley.github.io/spongycastle/ 
