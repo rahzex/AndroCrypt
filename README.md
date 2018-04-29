@@ -1,5 +1,6 @@
-# AndroCrypt
+# AndroCrypt(Beta)
   An Android App to Create Encrypted File vault and store data securely.
+  This App is in Beta Stage. Feel Free to Try it out :-)
 
 ## Algorithms Used
 1. AES 
