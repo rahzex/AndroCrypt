@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\filebrowser\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a9b729171c8e6c258f96205efe08a4d68ea62e2">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\pre-dexed\release\classes_d50a52d0b1c8592bf304d80f0025dce92330eae7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f79618dbf7e755ab3abb51e0f593ed0be1ca9cb5">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_eda7250ff9b9e11b8ebeb56f733a695a46b47e6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\libs\prov-1.56.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="871d2315bc3a171c080684ac7fbc55ecd85b6548">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\transforms\dex\debug\folders\1000\2\prov-1.56.0.0_dca29899384d5af17f0203b0c5638399765a65fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\libs\prov-1.56.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="871d2315bc3a171c080684ac7fbc55ecd85b6548">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\pre-dexed\release\prov-1.56.0.0_dca29899384d5af17f0203b0c5638399765a65fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\filebrowser\build\intermediates\bundles\default\libs\commons-io-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="099e96066418e81052905cd9f0f5b95aa7e7d857">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\pre-dexed\release\commons-io-2.5_d34f6665f9e115914e8989453ed50698b8048641.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\filebrowser\build\intermediates\bundles\default\libs\commons-io-2.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="099e96066418e81052905cd9f0f5b95aa7e7d857">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\transforms\dex\debug\folders\1000\8\commons-io-2.5_d34f6665f9e115914e8989453ed50698b8048641\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\libs\core-1.56.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9622d6de1407dd3506254fb9b0292eb1206f6991">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\pre-dexed\release\core-1.56.0.0_7a493763602a528228cc8a31de8726b1ab91c473.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\libs\core-1.56.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9622d6de1407dd3506254fb9b0292eb1206f6991">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\transforms\dex\debug\folders\1000\2\core-1.56.0.0_7a493763602a528228cc8a31de8726b1ab91c473\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\Rahul Pal\Documents\Android_Projects\AndroCrypt\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8163e8658c7b074c2d775300ba8563a9ac74f568\classes.dex" />
+    </item>
+
+</items>

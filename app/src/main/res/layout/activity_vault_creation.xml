@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.noobs.rahulpal.androcrypt.CreateVault"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/buttonCreateVault"
+            style="@android:style/Widget.Material.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewCP"
+            android:layout_marginTop="81dp"
+            android:layout_toEndOf="@+id/textViewVN"
+            android:text="Create Vault"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="384dp" />
+
+        <TextView
+            android:id="@+id/textViewSA"
+            android:layout_width="127dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/textViewCP"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:text="Select Algorithm"
+            android:textAlignment="textStart"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="30dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="114dp"
+            android:layout_height="104dp"
+            android:layout_alignTop="@+id/textViewSA"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/textViewSA"
+            android:checkedButton="@+id/radioButtonAES"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="30dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonAES"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:text="AES"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTwofish"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:text="Twofish"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSerpent"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:text="Serpent"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewVN"
+            android:layout_width="96dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/editTextVaultName"
+            android:layout_alignStart="@+id/textViewSA"
+            android:text="Vault Name"
+            android:textAlignment="textStart"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="156dp" />
+
+        <EditText
+            android:id="@+id/editTextVaultName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/radioGroup"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="143dp"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textViewVP"
+            android:layout_width="121dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/editTextPassword"
+            android:layout_alignStart="@+id/textViewVN"
+            android:text="Vault Password"
+            android:textAlignment="textStart"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTextVaultName"
+            android:layout_below="@+id/editTextVaultName"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="197dp"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textViewCP"
+            android:layout_width="129dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/editTextConfirmPass"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:text="Confirm Password"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="269dp" />
+
+        <EditText
+            android:id="@+id/editTextConfirmPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTextPassword"
+            android:layout_below="@+id/editTextPassword"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="256dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
