@@ -8,5 +8,5 @@
 KeySize is 256
 
 # Open Source Libs/Projects Used:
-SpongyCastle : https://rtyley.github.io/spongycastle/ 
-FileBrowser / FileChooser : https://github.com/adityak368/Android-FileBrowser-FilePicker
+1. SpongyCastle : https://rtyley.github.io/spongycastle/ 
+2. FileBrowser / FileChooser : https://github.com/adityak368/Android-FileBrowser-FilePicker
