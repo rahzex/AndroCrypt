@@ -20,11 +20,11 @@
             style="@android:style/Widget.Material.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewCP"
-            android:layout_marginTop="81dp"
-            android:layout_toEndOf="@+id/textViewVN"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="80dp"
             android:text="Create Vault"
-            android:textSize="16sp"
+            android:textSize="18sp"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="384dp" />
 
@@ -33,7 +33,9 @@
             android:layout_width="127dp"
             android:layout_height="30dp"
             android:layout_alignEnd="@+id/textViewCP"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="11dp"
             android:layout_marginTop="24dp"
             android:text="Select Algorithm"
             android:textAlignment="textStart"
@@ -78,7 +80,7 @@
 
         <TextView
             android:id="@+id/textViewVN"
-            android:layout_width="96dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_alignBottom="@+id/editTextVaultName"
             android:layout_alignStart="@+id/textViewSA"
@@ -93,19 +95,20 @@
             android:id="@+id/editTextVaultName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignStart="@+id/radioGroup"
             android:layout_below="@+id/radioGroup"
+            android:layout_marginEnd="11dp"
             android:layout_marginTop="9dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="152dp"
-            tools:layout_editor_absoluteY="143dp"
-            android:layout_alignParentEnd="true" />
+            tools:layout_editor_absoluteY="143dp" />
 
         <TextView
             android:id="@+id/textViewVP"
-            android:layout_width="121dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_alignBottom="@+id/editTextPassword"
             android:layout_alignStart="@+id/textViewVN"
@@ -120,23 +123,23 @@
             android:id="@+id/editTextPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignStart="@+id/editTextVaultName"
             android:layout_below="@+id/editTextVaultName"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginTop="28dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="152dp"
-            tools:layout_editor_absoluteY="197dp"
-            android:layout_alignParentEnd="true" />
+            tools:layout_editor_absoluteY="197dp" />
 
         <TextView
             android:id="@+id/textViewCP"
-            android:layout_width="129dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_alignBottom="@+id/editTextConfirmPass"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp"
+            android:layout_marginLeft="11dp"
             android:text="Confirm Password"
             android:textAlignment="center"
             android:textSize="15sp"
@@ -148,15 +151,16 @@
             android:id="@+id/editTextConfirmPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignStart="@+id/editTextPassword"
             android:layout_below="@+id/editTextPassword"
+            android:layout_marginEnd="11dp"
             android:layout_marginTop="28dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="152dp"
-            tools:layout_editor_absoluteY="256dp"
-            android:layout_alignParentEnd="true" />
+            tools:layout_editor_absoluteY="256dp" />
 
     </RelativeLayout>
 

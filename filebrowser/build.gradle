@@ -7,13 +7,12 @@ ext {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
 
     defaultConfig {
         //applicationId "com.aditya.filebrowser"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 5
         versionName "1.4"
     }
@@ -26,14 +25,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.beardedhen:androidbootstrap:2.3.1'
-    compile 'com.roughike:bottom-bar:2.3.1'
-    compile 'com.simplecityapps:recyclerview-fastscroll:1.0.14'
-    compile files('libs/commons-io-2.5.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.beardedhen:androidbootstrap:2.3.1'
+    implementation 'com.roughike:bottom-bar:2.3.1'
+    implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.14'
+    implementation files('libs/commons-io-2.5.jar')
 }
 
 //apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
