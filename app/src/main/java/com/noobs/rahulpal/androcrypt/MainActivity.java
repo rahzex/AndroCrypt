@@ -3,6 +3,7 @@ package com.noobs.rahulpal.androcrypt;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -149,17 +150,22 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.all_vaults) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Toast.makeText(this, "Under Construction:)", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.settings) {
+            Toast.makeText(this, "Coming Sooon :)", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.github) {
+            Uri uri = Uri.parse("https://github.com/rahzex/AndroCrypt");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.twitter) {
+            Uri uri = Uri.parse("https://twitter.com/rahzex");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
