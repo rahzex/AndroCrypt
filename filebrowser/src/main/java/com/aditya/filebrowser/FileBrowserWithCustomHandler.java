@@ -15,7 +15,6 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -44,7 +43,11 @@ import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class FileBrowserWithCustomHandler extends AppCompatActivity implements OnFileChangedListener,IContextSwitcher,SearchView.OnQueryTextListener {
@@ -73,7 +76,10 @@ public class FileBrowserWithCustomHandler extends AppCompatActivity implements O
     private MenuItem mSearchMenuItem;
     private SearchViewListener mSearchViewListener;
     private Handler mUIUpdateHandler;
-    private List<FileItem> mFileList;
+    private List<FileItem> mFileList = new ArrayList<>();
+
+    private String mInitialDirectory;
+    private String mFilterFilesWithExtension;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +97,15 @@ public class FileBrowserWithCustomHandler extends AppCompatActivity implements O
         io = new FileIO(mNavigationHelper,mUIUpdateHandler,mContext);
         op = Operations.getInstance(mContext);
         extras = getIntent().getExtras();
+
+        //set file filter (i.e display files with the given extension)
+        mFilterFilesWithExtension = getIntent().getStringExtra(Constants.ALLOWED_FILE_EXTENSIONS);
+        if(mFilterFilesWithExtension!=null && !mFilterFilesWithExtension.isEmpty()) {
+            String allowedFileExtension[] = mFilterFilesWithExtension.split(";");
+            Set<String> allowedFilesFilter = new HashSet<String>(Arrays.asList(allowedFileExtension));
+            mNavigationHelper.setAllowedFileExtensionFilter(allowedFilesFilter);
+        }
+
         mFileList = mNavigationHelper.getFilesItemsInCurrentDirectory();
     }
 
@@ -180,7 +195,7 @@ public class FileBrowserWithCustomHandler extends AppCompatActivity implements O
         mCurrentPath = (TextView) findViewById(R.id.currentPath);
 
         mFilesList = (FastScrollRecyclerView) findViewById(R.id.recycler_view);
-        mAdapter = new CustomAdapter(mNavigationHelper.getFilesItemsInCurrentDirectory(),mContext);
+        mAdapter = new CustomAdapter(mFileList,mContext);
         mFilesList.setAdapter(mAdapter);
         mLayoutManager = new LinearLayoutManager(mContext);
         mFilesList.setLayoutManager(mLayoutManager);
@@ -245,6 +260,14 @@ public class FileBrowserWithCustomHandler extends AppCompatActivity implements O
         mBottomView.getTabWithId(R.id.menu_none).setVisibility(View.GONE);
         mPathChange.getTabWithId(R.id.menu_none).setVisibility(View.GONE);
         onFileChanged(mNavigationHelper.getCurrentDirectory());
+
+        //switch to initial directory if given
+        mInitialDirectory = getIntent().getStringExtra(Constants.INITIAL_DIRECTORY);
+        if(mInitialDirectory != null && !mInitialDirectory.isEmpty() ) {
+            File initDir = new File(mInitialDirectory);
+            if (initDir.exists())
+                mNavigationHelper.changeDirectory(initDir);
+        }
     }
 
     public void switchMode(Constants.CHOICE_MODE mode) {

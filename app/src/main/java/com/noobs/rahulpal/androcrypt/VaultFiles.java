@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +17,10 @@ import com.aditya.filebrowser.Constants;
 import com.aditya.filebrowser.FileBrowser;
 import com.aditya.filebrowser.FileChooser;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.crypto.BadPaddingException;
@@ -56,7 +59,7 @@ public class VaultFiles extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-                i2.putExtra(Constants.SELECTION_MODE, Constants.SELECTION_MODES.SINGLE_SELECTION.ordinal());
+                i2.putExtra(Constants.SELECTION_MODE,Constants.SELECTION_MODES.MULTIPLE_SELECTION.ordinal());
                 startActivityForResult(i2,PICK_FILE_REQUEST);
             }
         });
@@ -66,7 +69,8 @@ public class VaultFiles extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 context = v.getContext();
-                i3.putExtra(Constants.SELECTION_MODE, Constants.SELECTION_MODES.SINGLE_SELECTION.ordinal());
+                i3.putExtra(Constants.INITIAL_DIRECTORY, new File(Environment.getExternalStorageDirectory() + "/AndroCrypt/" + vname + "/").getAbsolutePath());
+                i3.putExtra(Constants.SELECTION_MODE,Constants.SELECTION_MODES.MULTIPLE_SELECTION.ordinal());
                 startActivityForResult(i3,REMOVE_FILE_REQUEST);
             }
         });
@@ -76,6 +80,7 @@ public class VaultFiles extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i4 = new Intent(getApplicationContext(), FileBrowser.class);
+                i4.putExtra(Constants.INITIAL_DIRECTORY, new File(Environment.getExternalStorageDirectory() + "/AndroCrypt/" + vname + "/").getAbsolutePath());
                 startActivity(i4);
             }
         });
@@ -98,14 +103,22 @@ public class VaultFiles extends AppCompatActivity {
 
         if (requestCode == PICK_FILE_REQUEST && data!=null) {
             if (resultCode == RESULT_OK) {
-                Uri addFilePath = data.getData();
-                encryptFiles(addFilePath);
+                ArrayList<Uri> selectedFiles  = data.getParcelableArrayListExtra(Constants.SELECTED_ITEMS);
+                Uri addFilePath = null;
+                for(int i =0;i<selectedFiles.size();i++){
+                    addFilePath = selectedFiles.get(i);
+                    encryptFiles(addFilePath);
+                }
             }
         }
         if (requestCode == REMOVE_FILE_REQUEST && data!=null) {
             if (resultCode == RESULT_OK) {
-                Uri removeFilePath = data.getData();
-                decryptFiles(removeFilePath);
+                ArrayList<Uri> selectedFiles  = data.getParcelableArrayListExtra(Constants.SELECTED_ITEMS);
+                Uri removeFilePath = null;
+                for(int i =0;i<selectedFiles.size();i++){
+                    removeFilePath = selectedFiles.get(i);
+                    decryptFiles(removeFilePath);
+                }
             }
         }
     }
@@ -145,7 +158,7 @@ public class VaultFiles extends AppCompatActivity {
             @Override
             protected void onPostExecute(Void result){
                 progressDialog.dismiss();
-                Toast.makeText(context,"File Added Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"File Added",Toast.LENGTH_SHORT).show();
             }
         }
         addingFiles ad = new addingFiles();
@@ -183,7 +196,7 @@ public class VaultFiles extends AppCompatActivity {
             @Override
             protected void onPostExecute(Void result){
                 progressDialog.dismiss();
-                Toast.makeText(context,"File Moved Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"File Decrypted",Toast.LENGTH_SHORT).show();
             }
         }
         movingFiles mv = new movingFiles();

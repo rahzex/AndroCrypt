@@ -3,18 +3,19 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.adityak'
     PUBLISH_ARTIFACT_ID = 'browsemyfiles'
-    PUBLISH_VERSION = '1.4'
+    PUBLISH_VERSION = '1.7'
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 25
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         //applicationId "com.aditya.filebrowser"
         minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 5
-        versionName "1.4"
+        targetSdkVersion 25
+        versionCode 9
+        versionName "1.7"
     }
     buildTypes {
         release {
@@ -27,8 +28,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:25.3.0'
+    implementation 'com.android.support:recyclerview-v7:25.3.0'
     implementation 'com.beardedhen:androidbootstrap:2.3.1'
     implementation 'com.roughike:bottom-bar:2.3.1'
     implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.14'

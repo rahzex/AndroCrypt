@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-//import android.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity
