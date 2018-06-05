@@ -4,7 +4,8 @@
   This App is in Beta Stage. Feel Free to Try it out :-)
 ## Notes: 
   Afrer decryption files with be inside "Decrypted Files" folder.
- *This limitation will be removed very soon...
+ 
+ *This limitation will be removed very soon...*
 
 ## Algorithms Used
 1. AES 
