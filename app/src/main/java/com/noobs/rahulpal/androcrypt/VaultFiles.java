@@ -103,6 +103,7 @@ public class VaultFiles extends AppCompatActivity {
 
         if (requestCode == PICK_FILE_REQUEST && data!=null) {
             if (resultCode == RESULT_OK) {
+            // multiple file will be encrypted one by one
                 ArrayList<Uri> selectedFiles  = data.getParcelableArrayListExtra(Constants.SELECTED_ITEMS);
                 Uri addFilePath = null;
                 for(int i =0;i<selectedFiles.size();i++){
@@ -113,6 +114,7 @@ public class VaultFiles extends AppCompatActivity {
         }
         if (requestCode == REMOVE_FILE_REQUEST && data!=null) {
             if (resultCode == RESULT_OK) {
+            // multiple file will be Decrypted one by one
                 ArrayList<Uri> selectedFiles  = data.getParcelableArrayListExtra(Constants.SELECTED_ITEMS);
                 Uri removeFilePath = null;
                 for(int i =0;i<selectedFiles.size();i++){
